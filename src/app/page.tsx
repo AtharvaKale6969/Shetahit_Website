@@ -225,7 +225,7 @@ export default function Home() {
             {/* Set 1 */}
             <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
               <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
-                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110 mix-blend-multiply" />
               </div>
               <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
                 <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-12 md:h-16 w-auto" />
@@ -237,7 +237,7 @@ export default function Home() {
             {/* Set 2 */}
             <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
               <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
-                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110 mix-blend-multiply" />
               </div>
               <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
                 <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-12 md:h-16 w-auto" />
@@ -249,7 +249,7 @@ export default function Home() {
             {/* Set 3 */}
             <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
               <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
-                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110 mix-blend-multiply" />
               </div>
               <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
                 <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-12 md:h-16 w-auto" />
@@ -261,7 +261,7 @@ export default function Home() {
             {/* Set 4 */}
             <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
               <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
-                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110 mix-blend-multiply" />
               </div>
               <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
                 <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-12 md:h-16 w-auto" />
