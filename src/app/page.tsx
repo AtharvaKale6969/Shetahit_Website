@@ -224,50 +224,50 @@ export default function Home() {
           <div className="animate-marquee hover:[animation-play-state:paused] py-4">
             {/* Set 1 */}
             <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
               </div>
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-12 md:h-16 w-auto" />
               </div>
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
               </div>
             </div>
             {/* Set 2 */}
             <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
               </div>
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-12 md:h-16 w-auto" />
               </div>
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
               </div>
             </div>
             {/* Set 3 */}
             <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
               </div>
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-12 md:h-16 w-auto" />
               </div>
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
               </div>
             </div>
             {/* Set 4 */}
             <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
               </div>
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-12 md:h-16 w-auto" />
               </div>
-              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
-                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-24 md:h-32">
+                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-24 md:h-32 w-auto scale-110" />
               </div>
             </div>
           </div>
