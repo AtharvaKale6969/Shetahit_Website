@@ -209,6 +209,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Clients & Partners Section */}
+      <section className="w-full py-16 px-6 bg-gray-50 border-t border-gray-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto mb-10 text-center">
+          <h2 className="text-4xl font-bold text-[#043b22]">Our Clients & Partners</h2>
+          <div className="w-24 h-1 bg-[#df6c1f] mx-auto mt-4 rounded-full"></div>
+        </div>
+        
+        <div className="relative w-full overflow-hidden whitespace-nowrap">
+          {/* Gradient masks for smooth fade effect at edges */}
+          <div className="absolute left-0 top-0 w-16 md:w-32 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-16 md:w-32 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+          
+          <div className="animate-marquee hover:[animation-play-state:paused] py-4">
+            {/* Set 1 */}
+            <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+            </div>
+            {/* Set 2 */}
+            <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+            </div>
+            {/* Set 3 */}
+            <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+            </div>
+            {/* Set 4 */}
+            <div className="flex items-center gap-16 md:gap-24 px-8 md:px-12">
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/PWMSPL_LOGO.jpg" alt="Plastroots Waste Management" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/Geoclaim_1.png" alt="Geoclaim Energy Solutions" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+              <div className="flex items-center justify-center min-w-[150px] md:min-w-[200px] h-20 md:h-24">
+                <Image src="/Images/PF_LOGO.png" alt="Plastroots Foundation" width={200} height={100} className="object-contain h-16 md:h-20 w-auto" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
