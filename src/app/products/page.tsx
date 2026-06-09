@@ -3,7 +3,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const S3_BASE = "http://shetahit-web.s3-website.ap-south-1.amazonaws.com/";
 
 interface Product {
   name: string;
@@ -23,62 +22,62 @@ const fvfCategories: Category[] = [
     title: "Grains",
     icon: "🌾",
     products: [
-      { name: "Rice", sub: "Multiple varieties", img: "Shetahit Website/FVF Catalogue/Grains/Rice/Rice 1.jpg", desc: "Premium quality rice sourced directly from farmers. Available in multiple varieties including basmati, non-basmati, and specialty varieties. Ideal for manufacturers, traders, and exporters." },
-      { name: "Wheat", sub: "Premium grade", img: "Shetahit Website/FVF Catalogue/Grains/Wheat/Wheat 1.jpg", desc: "High-grade wheat with consistent quality standards. Suitable for flour mills, food processors, and traders. Sourced from best wheat-growing regions." },
-      { name: "Chickpeas (Chana)", sub: "High protein", img: "Shetahit Website/FVF Catalogue/Grains/Chana Chickpeas/Chana Chickpeas 1.jpg", desc: "Premium chickpeas known for their rich protein content and consistent size. Perfect for dal mills, food processors, and direct retail." },
-      { name: "Soybean", sub: "High oil content", img: "Shetahit Website/FVF Catalogue/Grains/Soybeans/Soybean 1.avif", desc: "High-quality soybeans with excellent oil content. Suitable for oil extraction, protein meal production, and food processing industries." },
-      { name: "Maize", sub: "Feed & food grade", img: "Shetahit Website/FVF Catalogue/Grains/Maize/Maize 1.jpeg", desc: "Fresh and dried maize varieties for feed, food, and starch industries. Consistent quality with proper moisture levels." }
+      { name: "Rice", sub: "Multiple varieties", img: "/Images/FVF Catalogue/Grains/Rice/Rice 2.jpg", desc: "Premium quality rice sourced directly from farmers. Available in multiple varieties including basmati, non-basmati, and specialty varieties. Ideal for manufacturers, traders, and exporters." },
+      { name: "Wheat", sub: "Premium grade", img: "/Images/FVF Catalogue/Grains/Wheat/Wheat 1.jpg", desc: "High-grade wheat with consistent quality standards. Suitable for flour mills, food processors, and traders. Sourced from best wheat-growing regions." },
+      { name: "Chickpeas (Chana)", sub: "High protein", img: "/Images/FVF Catalogue/Grains/Chana Chickpeas/Chana Chickpeas 1.jpg", desc: "Premium chickpeas known for their rich protein content and consistent size. Perfect for dal mills, food processors, and direct retail." },
+      { name: "Soybean", sub: "High oil content", img: "/Images/FVF Catalogue/Grains/Soybeans/Soybean 1.avif", desc: "High-quality soybeans with excellent oil content. Suitable for oil extraction, protein meal production, and food processing industries." },
+      { name: "Maize", sub: "Feed & food grade", img: "/Images/FVF Catalogue/Grains/Maize/Maize 1.jpeg", desc: "Fresh and dried maize varieties for feed, food, and starch industries. Consistent quality with proper moisture levels." }
     ]
   },
   {
     title: "Pulses",
     icon: "🫘",
     products: [
-      { name: "Split Chickpeas", sub: "Chana Dal", img: "Shetahit Website/FVF Catalogue/Pulses/Split Chickpeas (Chana Dal)/Split Chickpeas Chana Dal 1.jpg", desc: "Processed split chickpeas with uniform color and size. High protein content, excellent cooking quality. Ready for retail and bulk supply." },
-      { name: "Pigeon Pea", sub: "Toor Dal", img: "Shetahit Website/FVF Catalogue/Pulses/Pigeon Pea (Toor Dal)/Pigeon pea Toor Dal 1.webp", desc: "Premium quality toor dal with consistent split and clean processing. One of the most consumed pulses — available in both oily and dry varieties." }
+      { name: "Split Chickpeas", sub: "Chana Dal", img: "/Images/FVF Catalogue/Pulses/Split Chickpeas (Chana Dal)/Split Chickpeas Chana Dal 1.jpg", desc: "Processed split chickpeas with uniform color and size. High protein content, excellent cooking quality. Ready for retail and bulk supply." },
+      { name: "Pigeon Pea", sub: "Toor Dal", img: "/Images/FVF Catalogue/Pulses/Pigeon Pea (Toor Dal)/Pigeon pea Toor Dal 1.webp", desc: "Premium quality toor dal with consistent split and clean processing. One of the most consumed pulses — available in both oily and dry varieties." }
     ]
   },
   {
     title: "Fruits",
     icon: "🍊",
     products: [
-      { name: "Orange (Santra)", sub: "Nagpur specialty", img: "Shetahit Website/FVF Catalogue/Fruits/Orange/Orange 1.jpg", desc: "Juicy, sweet Nagpur oranges — the \"Orange City\" specialty. Fresh, premium-grade produce available in season for direct consumption and processing." },
-      { name: "Sweet Lime", sub: "Mosambi", img: "Shetahit Website/FVF Catalogue/Fruits/Sweet lime Mosambi/Mosambi 1.jpg", desc: "Fresh, quality mosambi with high juice content. Popular for juice bars, hotels, and retail markets. Available in prime season." },
-      { name: "Lemon", sub: "High citric acid", img: "Shetahit Website/FVF Catalogue/Fruits/Lemon/Lemon 1.jpg", desc: "Farm-fresh lemons with high citric acid content. Available in multiple grades for culinary, food processing, and export markets." }
+      { name: "Orange (Santra)", sub: "Nagpur specialty", img: "/Images/FVF Catalogue/Fruits/Orange/Orange 1.jpg", desc: "Juicy, sweet Nagpur oranges — the \"Orange City\" specialty. Fresh, premium-grade produce available in season for direct consumption and processing." },
+      { name: "Sweet Lime", sub: "Mosambi", img: "/Images/FVF Catalogue/Fruits/Sweet lime Mosambi/Mosambi 1.jpg", desc: "Fresh, quality mosambi with high juice content. Popular for juice bars, hotels, and retail markets. Available in prime season." },
+      { name: "Lemon", sub: "High citric acid", img: "/Images/FVF Catalogue/Fruits/Lemon/Lemon 1.jpg", desc: "Farm-fresh lemons with high citric acid content. Available in multiple grades for culinary, food processing, and export markets." }
     ]
   },
   {
     title: "Vegetables",
     icon: "🧅",
     products: [
-      { name: "Onion", sub: "Long shelf-life, export quality", img: "Shetahit Website/FVF Catalogue/Vegetables/Onion/onion 1.webp", desc: "Long shelf-life onions sourced from prime growing regions. Special focus on export-quality produce with proper grading and sorting." }
+      { name: "Onion", sub: "Long shelf-life, export quality", img: "/Images/FVF Catalogue/Vegetables/Onion/onion 1.webp", desc: "Long shelf-life onions sourced from prime growing regions. Special focus on export-quality produce with proper grading and sorting." }
     ]
   },
   {
     title: "Dry Fruits",
     icon: "🥜",
     products: [
-      { name: "Cashew", sub: "W180, W240, W320 grades", img: "Shetahit Website/FVF Catalogue/Dry Fruits/Cashews/Cashew 1.jpg", desc: "Premium whole cashews with W180, W240, W320 grading. Rich, buttery flavor with proper processing standards for retail and bulk supply." },
-      { name: "Almonds", sub: "Regular & blanched", img: "Shetahit Website/FVF Catalogue/Dry Fruits/Almonds/Almonds 1.webp", desc: "Selected almonds with consistent size and quality. Rich in nutrients, available in regular and blanched variants for retail and industrial use." }
+      { name: "Cashew", sub: "W180, W240, W320 grades", img: "/Images/FVF Catalogue/Dry Fruits/Cashews/Cashew 2.jpg", desc: "Premium whole cashews with W180, W240, W320 grading. Rich, buttery flavor with proper processing standards for retail and bulk supply." },
+      { name: "Almonds", sub: "Regular & blanched", img: "/Images/FVF Catalogue/Dry Fruits/Almonds/Almonds 1.webp", desc: "Selected almonds with consistent size and quality. Rich in nutrients, available in regular and blanched variants for retail and industrial use." }
     ]
   },
   {
     title: "Spices",
     icon: "🌶️",
     products: [
-      { name: "Cardamom", sub: "High essential oil", img: "Shetahit Website/FVF Catalogue/Spices/Cardamom/Cardamom 1.jpg", desc: "Aromatic green cardamom from premium growing regions. High essential oil content, used in food processing, beverages, and spice blends." },
-      { name: "Cloves", sub: "Premium aromatic", img: "Shetahit Website/FVF Catalogue/Spices/Cloves/Cloves 1.webp", desc: "Whole dried cloves with strong aromatic properties. Used in spice blends, essential oil extraction, and food processing." },
-      { name: "Cinnamon", sub: "Sticks & powder", img: "Shetahit Website/FVF Catalogue/Spices/Cinnamon/Cinnamon 1.webp", desc: "Premium cinnamon sticks and powder with rich flavor. Available in multiple grades for retail packaging, food processing, and exports." },
-      { name: "Black Pepper", sub: "Whole & ground", img: "Shetahit Website/FVF Catalogue/Spices/Black Pepper/Black pepper 1.jpg", desc: "High-grade black pepper with strong piperine content. Available in whole, cracked, and ground forms for all culinary and industrial applications." },
-      { name: "Nutmeg", sub: "Whole & ground", img: "Shetahit Website/FVF Catalogue/Spices/NutMeg/Nutmeg 1.jpeg", desc: "Whole and ground nutmeg with distinct aroma. Used in baking, beverages, spice blends, and pharmaceutical applications." }
+      { name: "Cardamom", sub: "High essential oil", img: "/Images/FVF Catalogue/Spices/Cardamom/Cardamom 1.jpg", desc: "Aromatic green cardamom from premium growing regions. High essential oil content, used in food processing, beverages, and spice blends." },
+      { name: "Cloves", sub: "Premium aromatic", img: "/Images/FVF Catalogue/Spices/Cloves/Cloves 1.webp", desc: "Whole dried cloves with strong aromatic properties. Used in spice blends, essential oil extraction, and food processing." },
+      { name: "Cinnamon", sub: "Sticks & powder", img: "/Images/FVF Catalogue/Spices/Cinnamon/Cinnamon 1.webp", desc: "Premium cinnamon sticks and powder with rich flavor. Available in multiple grades for retail packaging, food processing, and exports." },
+      { name: "Black Pepper", sub: "Whole & ground", img: "/Images/FVF Catalogue/Spices/Black Pepper/Black pepper 1.jpg", desc: "High-grade black pepper with strong piperine content. Available in whole, cracked, and ground forms for all culinary and industrial applications." },
+      { name: "Nutmeg", sub: "Whole & ground", img: "/Images/FVF Catalogue/Spices/NutMeg/Nutmeg 1.jpeg", desc: "Whole and ground nutmeg with distinct aroma. Used in baking, beverages, spice blends, and pharmaceutical applications." }
     ]
   },
   {
     title: "Other Commodities",
     icon: "🫚",
     products: [
-      { name: "Chilli (Red Dried)", sub: "Multiple grades", img: "Shetahit Website/FVF Catalogue/Other/Chilli ( Red Dried )/Red Chilli 1.jpg", desc: "Vibrant red dried chillies with consistent color and heat level. Available in multiple varieties and grades for spice processing and export." },
-      { name: "Turmeric", sub: "High curcumin content", img: "Shetahit Website/FVF Catalogue/Other/Turmeric/Turmeric 1.jpg", desc: "High-curcumin turmeric with bright yellow color. Available in raw, polished, and finger forms. Used in food, pharmaceutical, and cosmetic industries." }
+      { name: "Chilli (Red Dried)", sub: "Multiple grades", img: "/Images/FVF Catalogue/Other/Chilli ( Red Dried )/Red Chilli 1.jpg", desc: "Vibrant red dried chillies with consistent color and heat level. Available in multiple varieties and grades for spice processing and export." },
+      { name: "Turmeric", sub: "High curcumin content", img: "/Images/FVF Catalogue/Other/Turmeric/Turmeric 1.jpg", desc: "High-curcumin turmeric with bright yellow color. Available in raw, polished, and finger forms. Used in food, pharmaceutical, and cosmetic industries." }
     ]
   }
 ];
@@ -152,7 +151,7 @@ export default function ProductsPage() {
                   We provide reliable and consistent supply of agricultural produce to manufacturers, traders, exporters, and retailers — with a strong focus on quality, consistency, and long shelf-life produce.
                 </p>
                 <a 
-                  href={`${S3_BASE}Shetahit Website/FVF Catalogue/Shetahit_Product_Catalog.pdf`} 
+                  href="/Images/FVF Catalogue/Shetahit_Product_Catalog.pdf" 
                   target="_blank" rel="noopener noreferrer"
                   className="inline-block px-8 py-4 bg-[#df6c1f] text-white font-bold rounded-lg hover:bg-[#c25a17] transition-colors"
                 >
@@ -161,7 +160,7 @@ export default function ProductsPage() {
               </div>
               <div className="flex-1 relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <img 
-                  src={`${S3_BASE}Shetahit Website/FVF Catalogue/Grains/Rice/Rice 1.jpg`} 
+                  src="/Images/FVF Catalogue/Grains/Rice/Rice 2.jpg" 
                   alt="Product Catalog" 
                   className="w-full h-full object-cover" 
                 />
@@ -189,7 +188,7 @@ export default function ProductsPage() {
                       >
                         <div className="w-full aspect-square overflow-hidden bg-gray-50 relative">
                           <img 
-                            src={S3_BASE + prod.img} 
+                            src={prod.img} 
                             alt={prod.name} 
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                           />
@@ -221,14 +220,14 @@ export default function ProductsPage() {
             <div className="flex flex-col lg:flex-row gap-12 items-start bg-[#f9fbfe] rounded-3xl p-8 md:p-12 mb-12">
               <div className="flex-1 w-full space-y-4">
                 <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                  <img src={`${S3_BASE}Shetahit Website/Yugantra Product/yugantra 1.png`} alt="Yugantra Organic Compost" className="w-full h-full object-cover" />
+                  <img src="/Images/yugantra 4.png" alt="Yugantra Organic Compost" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-1 relative aspect-video rounded-xl overflow-hidden shadow-sm">
-                    <img src={`${S3_BASE}Shetahit Website/Yugantra Product/yugantra 2.png`} alt="Yugantra Product" className="w-full h-full object-cover" />
+                    <img src="/Images/yugantra 2.png" alt="Yugantra Product" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 relative aspect-video rounded-xl overflow-hidden shadow-sm">
-                    <img src={`${S3_BASE}Shetahit Website/Yugantra Product/yugantra 3.png`} alt="Yugantra Application" className="w-full h-full object-cover" />
+                    <img src="/Images/yugantra 1.png" alt="Yugantra Application" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -275,7 +274,7 @@ export default function ProductsPage() {
             </div>
             
             <div className="relative w-full rounded-3xl overflow-hidden shadow-xl max-h-[500px]">
-              <img src={`${S3_BASE}Shetahit Website/Yugantra Product/yugantra 4.png`} alt="Yugantra in Field" className="w-full object-cover object-center" />
+              <img src="/Images/yugantra 4.png" alt="Yugantra in Field" className="w-full object-cover object-center" />
             </div>
           </div>
         )}
@@ -320,10 +319,10 @@ export default function ProductsPage() {
             
             <div className="flex-1 w-full flex flex-col gap-6">
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                <img src={`${S3_BASE}Shetahit Website/Farmers Consulting/Farmers Consulting 3.png`} alt="Farm Consulting" className="w-full h-full object-cover" />
+                <img src="/Images/Farmers Consulting 3.png" alt="Farm Consulting" className="w-full h-full object-cover" />
               </div>
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                <img src={`${S3_BASE}Shetahit Website/Farmers Consulting/Farmers Consulting 4.png`} alt="Farm Advisory" className="w-full h-full object-cover" />
+                <img src="/Images/Farmers Consulting 4.png" alt="Farm Advisory" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -342,7 +341,7 @@ export default function ProductsPage() {
               {/* Image Section */}
               <div className="w-full md:w-1/2 relative bg-gray-100 aspect-square md:aspect-auto">
                 <img 
-                  src={S3_BASE + selectedProduct.product.img} 
+                  src={selectedProduct.product.img} 
                   alt={selectedProduct.product.name} 
                   className="w-full h-full object-cover"
                 />
