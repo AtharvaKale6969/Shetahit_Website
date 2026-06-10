@@ -30,35 +30,78 @@ export default function AboutPage() {
       <section className="w-full py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-[#043b22] mb-8">Who We Are</h2>
-          <p className="text-xl text-gray-700 leading-relaxed mb-6">
-            Shetahit Farm Solutions Pvt. Ltd. is an agriculture-focused company committed to transforming the agri-value chain through efficient supply systems, farmer-centric initiatives, and sustainable practices.
-          </p>
+          <div className="text-xl text-gray-700 leading-relaxed mb-6 space-y-4 text-justify">
+            <p>
+              Shetahit Farm Solutions Pvt. Ltd. is an agriculture-focused company dedicated to strengthening and transforming the agricultural value chain through innovative solutions, efficient supply systems, and farmer-centric initiatives. We work closely with farmers, agribusinesses, and stakeholders to enhance productivity, improve market access, and promote sustainable agricultural practices.
+            </p>
+            <p>
+              Our commitment lies in bridging the gap between agricultural production and end-market requirements by ensuring quality inputs, reliable procurement processes, and value-added services. Through technology-driven operations, strategic partnerships, and a deep understanding of the farming ecosystem, we strive to create long-term value for farmers while contributing to the growth of the agricultural sector.
+            </p>
+            <p>
+              At Shetahit Farm Solutions, we believe that empowering farmers with the right resources, knowledge, and opportunities is the key to building a resilient, profitable, and sustainable future for agriculture.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Vision & Mission */}
       <section className="w-full py-20 px-6 bg-[#f9fbfe]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-[#043b22]">
-            <h3 className="text-3xl font-bold text-[#043b22] mb-6 flex items-center gap-4">
-              <span className="w-12 h-12 rounded-full bg-[#e8f3ee] flex items-center justify-center text-[#043b22]">🎯</span>
-              Our Vision
-            </h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              To become a trusted partner in agriculture by integrating traditional knowledge with modern innovations.
-            </p>
+          {/* Vision Card (Orange Theme) */}
+          <div className="group flex flex-col bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(223,108,31,0.3)] hover:-translate-y-2">
+            <div className="relative w-full h-64 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
+              <Image 
+                src="/Images/Our_Mission.png" 
+                alt="Our Vision" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+              <div className="absolute bottom-6 left-8 z-20 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-xl shadow-lg text-[#df6c1f]">🎯</div>
+                <h3 className="text-3xl font-bold text-white drop-shadow-md">Our Vision</h3>
+              </div>
+            </div>
+            <div className="p-8 relative bg-white flex-1">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#df6c1f] to-orange-300"></div>
+              <p className="text-gray-700 text-lg leading-relaxed font-medium text-justify">
+                To become a trusted and reliable partner in agriculture by blending traditional agricultural knowledge with modern innovations, creating sustainable solutions that empower farmers, improve productivity, enhance market connectivity, and contribute to the long-term growth and resilience of the agricultural sector.
+              </p>
+            </div>
           </div>
           
-          <div className="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-[#df6c1f]">
-            <h3 className="text-3xl font-bold text-[#df6c1f] mb-6 flex items-center gap-4">
-              <span className="w-12 h-12 rounded-full bg-[#fcedf3] flex items-center justify-center text-[#df6c1f]">🚀</span>
-              Our Mission
-            </h3>
-            <ul className="text-gray-600 text-lg leading-relaxed list-disc list-inside space-y-2">
-              <li>Empower farmers through knowledge and market access</li>
-              <li>Deliver high-quality agri-products to businesses</li>
-              <li>Promote sustainable and profitable farming practices</li>
-            </ul>
+          {/* Mission Card (Green Theme) */}
+          <div className="group flex flex-col bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(4,59,34,0.3)] hover:-translate-y-2">
+            <div className="relative w-full h-64 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
+              <Image 
+                src="/Images/Our_vision.png" 
+                alt="Our Mission" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+              <div className="absolute bottom-6 left-8 z-20 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-xl shadow-lg text-[#043b22]">🚀</div>
+                <h3 className="text-3xl font-bold text-white drop-shadow-md">Our Mission</h3>
+              </div>
+            </div>
+            <div className="p-8 relative bg-white flex-1">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#043b22] to-green-600"></div>
+              <ul className="text-gray-700 text-lg leading-relaxed space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#043b22] mt-1 text-xl">•</span>
+                  <span>Empower farmers through knowledge and market access</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#043b22] mt-1 text-xl">•</span>
+                  <span>Deliver high-quality agri-products to businesses</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#043b22] mt-1 text-xl">•</span>
+                  <span>Promote sustainable and profitable farming practices</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -126,52 +169,52 @@ export default function AboutPage() {
           <h2 className="text-4xl font-bold text-white mb-16 text-center">SDGs (Sustainable Development Goals)</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="flex flex-col items-center group">
-              <div className="w-48 h-56 rounded-2xl overflow-hidden shadow-xl mb-6 relative group-hover:scale-105 transition-transform bg-white flex flex-col items-center justify-between p-4">
-                <div className="text-5xl font-bold text-[#df6c1f] z-10">
+            <div className="flex flex-col items-center group cursor-pointer">
+              <div className="w-48 h-56 rounded-2xl overflow-hidden shadow-xl mb-6 relative transition-all duration-500 ease-out bg-white flex flex-col items-center justify-between p-4 group-hover:-translate-y-4 group-hover:shadow-[0_20px_40px_-15px_rgba(223,108,31,0.6)] border-2 border-transparent group-hover:border-[#df6c1f]/40">
+                <div className="text-5xl font-bold text-[#df6c1f] z-10 transition-transform duration-500 group-hover:scale-110 group-hover:text-[#c45a16]">
                   <Counter end={3} />
                 </div>
-                <div className="relative w-full h-32 mt-2">
+                <div className="relative w-full h-32 mt-2 transition-transform duration-500 group-hover:scale-110">
                   <Image src="/wp-content/uploads/2023/10/1.jpg" alt="Good Health and well Being" fill className="object-contain" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-[#df6c1f]">Good Health and well Being</h3>
+              <h3 className="text-xl font-bold text-[#df6c1f] transition-colors duration-300 group-hover:text-white">Good Health and well Being</h3>
             </div>
             
-            <div className="flex flex-col items-center group">
-              <div className="w-48 h-56 rounded-2xl overflow-hidden shadow-xl mb-6 relative group-hover:scale-105 transition-transform bg-white flex flex-col items-center justify-between p-4">
-                <div className="text-5xl font-bold text-[#df6c1f] z-10">
+            <div className="flex flex-col items-center group cursor-pointer">
+              <div className="w-48 h-56 rounded-2xl overflow-hidden shadow-xl mb-6 relative transition-all duration-500 ease-out bg-white flex flex-col items-center justify-between p-4 group-hover:-translate-y-4 group-hover:shadow-[0_20px_40px_-15px_rgba(223,108,31,0.6)] border-2 border-transparent group-hover:border-[#df6c1f]/40">
+                <div className="text-5xl font-bold text-[#df6c1f] z-10 transition-transform duration-500 group-hover:scale-110 group-hover:text-[#c45a16]">
                   <Counter end={6} />
                 </div>
-                <div className="relative w-full h-32 mt-2">
+                <div className="relative w-full h-32 mt-2 transition-transform duration-500 group-hover:scale-110">
                   <Image src="/wp-content/uploads/2023/10/2.jpg" alt="Clean Water and Sanitization" fill className="object-contain" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-[#df6c1f]">Clean Water and Sanitization</h3>
+              <h3 className="text-xl font-bold text-[#df6c1f] transition-colors duration-300 group-hover:text-white">Clean Water and Sanitization</h3>
             </div>
             
-            <div className="flex flex-col items-center group">
-              <div className="w-48 h-56 rounded-2xl overflow-hidden shadow-xl mb-6 relative group-hover:scale-105 transition-transform bg-white flex flex-col items-center justify-between p-4">
-                <div className="text-5xl font-bold text-[#df6c1f] z-10">
+            <div className="flex flex-col items-center group cursor-pointer">
+              <div className="w-48 h-56 rounded-2xl overflow-hidden shadow-xl mb-6 relative transition-all duration-500 ease-out bg-white flex flex-col items-center justify-between p-4 group-hover:-translate-y-4 group-hover:shadow-[0_20px_40px_-15px_rgba(223,108,31,0.6)] border-2 border-transparent group-hover:border-[#df6c1f]/40">
+                <div className="text-5xl font-bold text-[#df6c1f] z-10 transition-transform duration-500 group-hover:scale-110 group-hover:text-[#c45a16]">
                   <Counter end={13} />
                 </div>
-                <div className="relative w-full h-32 mt-2">
+                <div className="relative w-full h-32 mt-2 transition-transform duration-500 group-hover:scale-110">
                   <Image src="/wp-content/uploads/2023/10/3.jpg" alt="Climate Change" fill className="object-contain" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-[#df6c1f]">Climate Change</h3>
+              <h3 className="text-xl font-bold text-[#df6c1f] transition-colors duration-300 group-hover:text-white">Climate Change</h3>
             </div>
             
-            <div className="flex flex-col items-center group">
-              <div className="w-48 h-56 rounded-2xl overflow-hidden shadow-xl mb-6 relative group-hover:scale-105 transition-transform bg-white flex flex-col items-center justify-between p-4">
-                <div className="text-5xl font-bold text-[#df6c1f] z-10">
+            <div className="flex flex-col items-center group cursor-pointer">
+              <div className="w-48 h-56 rounded-2xl overflow-hidden shadow-xl mb-6 relative transition-all duration-500 ease-out bg-white flex flex-col items-center justify-between p-4 group-hover:-translate-y-4 group-hover:shadow-[0_20px_40px_-15px_rgba(223,108,31,0.6)] border-2 border-transparent group-hover:border-[#df6c1f]/40">
+                <div className="text-5xl font-bold text-[#df6c1f] z-10 transition-transform duration-500 group-hover:scale-110 group-hover:text-[#c45a16]">
                   <Counter end={15} />
                 </div>
-                <div className="relative w-full h-32 mt-2">
+                <div className="relative w-full h-32 mt-2 transition-transform duration-500 group-hover:scale-110">
                   <Image src="/wp-content/uploads/2023/10/4.jpg" alt="Life on Land" fill className="object-contain" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-[#df6c1f]">Life on Land</h3>
+              <h3 className="text-xl font-bold text-[#df6c1f] transition-colors duration-300 group-hover:text-white">Life on Land</h3>
             </div>
           </div>
         </div>

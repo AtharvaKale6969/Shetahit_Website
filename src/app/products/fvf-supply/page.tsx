@@ -1,0 +1,250 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+interface Product {
+  name: string;
+  sub: string;
+  img: string;
+  desc: string;
+}
+
+interface Category {
+  title: string;
+  icon: string;
+  products: Product[];
+}
+
+const fvfCategories: Category[] = [
+  {
+    title: "Grains",
+    icon: "🌾",
+    products: [
+      { name: "Rice", sub: "Multiple varieties", img: "/Images/FVF Catalogue/Grains/Rice/Rice 2.jpg", desc: "Premium quality rice sourced directly from farmers. Available in multiple varieties including basmati, non-basmati, and specialty varieties. Ideal for manufacturers, traders, and exporters." },
+      { name: "Wheat", sub: "Premium grade", img: "/Images/FVF Catalogue/Grains/Wheat/Wheat 1.jpg", desc: "High-grade wheat with consistent quality standards. Suitable for flour mills, food processors, and traders. Sourced from best wheat-growing regions." },
+      { name: "Chickpeas (Chana)", sub: "High protein", img: "/Images/FVF Catalogue/Grains/Chana Chickpeas/Chana Chickpeas 1.jpg", desc: "Premium chickpeas known for their rich protein content and consistent size. Perfect for dal mills, food processors, and direct retail." },
+      { name: "Soybean", sub: "High oil content", img: "/Images/FVF Catalogue/Grains/Soybeans/Soybean 1.avif", desc: "High-quality soybeans with excellent oil content. Suitable for oil extraction, protein meal production, and food processing industries." },
+      { name: "Maize", sub: "Feed & food grade", img: "/Images/FVF Catalogue/Grains/Maize/Maize 1.jpeg", desc: "Fresh and dried maize varieties for feed, food, and starch industries. Consistent quality with proper moisture levels." }
+    ]
+  },
+  {
+    title: "Pulses",
+    icon: "🫘",
+    products: [
+      { name: "Split Chickpeas", sub: "Chana Dal", img: "/Images/FVF Catalogue/Pulses/Split Chickpeas (Chana Dal)/Split Chickpeas Chana Dal 1.jpg", desc: "Processed split chickpeas with uniform color and size. High protein content, excellent cooking quality. Ready for retail and bulk supply." },
+      { name: "Pigeon Pea", sub: "Toor Dal", img: "/Images/FVF Catalogue/Pulses/Pigeon Pea (Toor Dal)/Pigeon pea Toor Dal 1.webp", desc: "Premium quality toor dal with consistent split and clean processing. One of the most consumed pulses — available in both oily and dry varieties." }
+    ]
+  },
+  {
+    title: "Fruits",
+    icon: "🍊",
+    products: [
+      { name: "Orange (Santra)", sub: "Nagpur specialty", img: "/Images/FVF Catalogue/Fruits/Orange/Orange 1.jpg", desc: "Juicy, sweet Nagpur oranges — the \"Orange City\" specialty. Fresh, premium-grade produce available in season for direct consumption and processing." },
+      { name: "Sweet Lime", sub: "Mosambi", img: "/Images/FVF Catalogue/Fruits/Sweet lime Mosambi/Mosambi 1.jpg", desc: "Fresh, quality mosambi with high juice content. Popular for juice bars, hotels, and retail markets. Available in prime season." },
+      { name: "Lemon", sub: "High citric acid", img: "/Images/FVF Catalogue/Fruits/Lemon/Lemon 1.jpg", desc: "Farm-fresh lemons with high citric acid content. Available in multiple grades for culinary, food processing, and export markets." }
+    ]
+  },
+  {
+    title: "Vegetables",
+    icon: "🧅",
+    products: [
+      { name: "Onion", sub: "Long shelf-life, export quality", img: "/Images/FVF Catalogue/Vegetables/Onion/onion 1.webp", desc: "Long shelf-life onions sourced from prime growing regions. Special focus on export-quality produce with proper grading and sorting." }
+    ]
+  },
+  {
+    title: "Dry Fruits",
+    icon: "🥜",
+    products: [
+      { name: "Cashew", sub: "W180, W240, W320 grades", img: "/Images/FVF Catalogue/Dry Fruits/Cashews/Cashew 2.jpg", desc: "Premium whole cashews with W180, W240, W320 grading. Rich, buttery flavor with proper processing standards for retail and bulk supply." },
+      { name: "Almonds", sub: "Regular & blanched", img: "/Images/FVF Catalogue/Dry Fruits/Almonds/Almonds 1.webp", desc: "Selected almonds with consistent size and quality. Rich in nutrients, available in regular and blanched variants for retail and industrial use." }
+    ]
+  },
+  {
+    title: "Spices",
+    icon: "🌶️",
+    products: [
+      { name: "Cardamom", sub: "High essential oil", img: "/Images/FVF Catalogue/Spices/Cardamom/Cardamom 1.jpg", desc: "Aromatic green cardamom from premium growing regions. High essential oil content, used in food processing, beverages, and spice blends." },
+      { name: "Cloves", sub: "Premium aromatic", img: "/Images/FVF Catalogue/Spices/Cloves/Cloves 1.webp", desc: "Whole dried cloves with strong aromatic properties. Used in spice blends, essential oil extraction, and food processing." },
+      { name: "Cinnamon", sub: "Sticks & powder", img: "/Images/FVF Catalogue/Spices/Cinnamon/Cinnamon 1.webp", desc: "Premium cinnamon sticks and powder with rich flavor. Available in multiple grades for retail packaging, food processing, and exports." },
+      { name: "Black Pepper", sub: "Whole & ground", img: "/Images/FVF Catalogue/Spices/Black Pepper/Black pepper 1.jpg", desc: "High-grade black pepper with strong piperine content. Available in whole, cracked, and ground forms for all culinary and industrial applications." },
+      { name: "Nutmeg", sub: "Whole & ground", img: "/Images/FVF Catalogue/Spices/NutMeg/Nutmeg 1.jpeg", desc: "Whole and ground nutmeg with distinct aroma. Used in baking, beverages, spice blends, and pharmaceutical applications." }
+    ]
+  },
+  {
+    title: "Other Commodities",
+    icon: "🫚",
+    products: [
+      { name: "Chilli (Red Dried)", sub: "Multiple grades", img: "/Images/FVF Catalogue/Other/Chilli ( Red Dried )/Red Chilli 1.jpg", desc: "Vibrant red dried chillies with consistent color and heat level. Available in multiple varieties and grades for spice processing and export." },
+      { name: "Turmeric", sub: "High curcumin content", img: "/Images/FVF Catalogue/Other/Turmeric/Turmeric 1.jpg", desc: "High-curcumin turmeric with bright yellow color. Available in raw, polished, and finger forms. Used in food, pharmaceutical, and cosmetic industries." }
+    ]
+  }
+];
+
+export default function FVFSupplyPage() {
+  const [selectedProduct, setSelectedProduct] = useState<{ product: Product, category: string } | null>(null);
+
+  return (
+    <main className="w-full bg-white min-h-screen relative flex flex-col">
+      {/* Hero Section */}
+      <section className="relative w-full h-[50vh] bg-[#043b22] flex items-center justify-center overflow-hidden mb-16">
+        <div className="absolute inset-0 opacity-40 mix-blend-overlay">
+          <Image 
+            src="/Images/products-hero.jpg" 
+            alt="FVF Supply Background" 
+            fill 
+            className="object-cover" 
+            priority
+          />
+        </div>
+        <div className="relative z-10 text-center px-6 mt-8">
+          <span className="inline-block px-4 py-1.5 bg-[#df6c1f] text-white font-bold rounded-full text-sm uppercase tracking-widest mb-6 shadow-sm">
+            Products & Services
+          </span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-md">FVF Supply</h1>
+          <p className="text-lg md:text-xl text-[#e8f3ee] max-w-2xl mx-auto leading-relaxed drop-shadow-sm font-medium">
+            Food, Vegetable, and Fruit Supply
+          </p>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6 w-full mb-20">
+        <div className="animate-fade-in">
+          {/* Intro block */}
+          <div className="flex flex-col md:flex-row items-center gap-10 bg-[#f9f9f9] p-8 md:p-12 rounded-3xl mb-16">
+            <div className="flex-1">
+              <h3 className="text-3xl font-bold text-[#043b22] mb-4">Food Vegetable Fruit (FVF) Supply</h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                We provide reliable and consistent supply of agricultural produce to manufacturers, traders, exporters, and retailers — with a strong focus on quality, consistency, and long shelf-life produce.
+              </p>
+              <a 
+                href="/Images/Shetahit_Product_Catalog.pdf" 
+                download="Shetahit_Product_Catalog.pdf"
+                target="_blank" rel="noopener noreferrer"
+                className="inline-block px-8 py-4 bg-[#df6c1f] text-white font-bold rounded-lg hover:bg-[#c25a17] transition-colors"
+              >
+                📄 Download Product Catalog
+              </a>
+            </div>
+            <div className="flex-1 relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <Image 
+                src="/Images/FVF Catalogue/Grains/Rice/Rice 2.jpg" 
+                alt="Product Catalog" 
+                fill
+                className="object-cover" 
+              />
+            </div>
+          </div>
+
+          {/* Product Categories */}
+          <div className="space-y-16">
+            {fvfCategories.map((cat, idx) => (
+              <div key={idx} className="border-t border-gray-100 pt-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-4xl">{cat.icon}</span>
+                  <div>
+                    <h3 className="text-3xl font-bold text-[#043b22]">{cat.title}</h3>
+                    <span className="text-gray-500 font-medium">{cat.products.length} Products</span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                  {cat.products.map((prod, pidx) => (
+                    <div 
+                      key={pidx} 
+                      onClick={() => setSelectedProduct({ product: prod, category: cat.title })}
+                      className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1 group cursor-pointer border border-transparent hover:border-[#df6c1f]/30"
+                    >
+                      <div className="w-full aspect-square overflow-hidden bg-gray-50 relative">
+                        <Image 
+                          src={prod.img} 
+                          alt={prod.name} 
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                          <span className="opacity-0 group-hover:opacity-100 bg-white/90 text-[#043b22] px-4 py-2 rounded-full font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            View Details
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-5">
+                        <h4 className="font-bold text-[#043b22] text-lg mb-1 line-clamp-1">{prod.name}</h4>
+                        <p className="text-sm text-gray-500 mb-3 line-clamp-1">{prod.sub}</p>
+                        <span className="inline-block px-3 py-1 bg-[#e8f3ee] text-[#043b22] text-xs font-bold rounded-md">
+                          {cat.title}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Product Modal */}
+      {selectedProduct && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+          <div 
+            className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto overflow-x-hidden transform transition-transform duration-300 scale-100"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex flex-col md:flex-row">
+              {/* Image Section */}
+              <div className="w-full md:w-1/2 relative bg-gray-100 aspect-square md:aspect-auto">
+                <Image 
+                  src={selectedProduct.product.img} 
+                  alt={selectedProduct.product.name} 
+                  fill
+                  className="object-cover"
+                />
+                <button 
+                  onClick={() => setSelectedProduct(null)}
+                  className="absolute top-4 left-4 w-10 h-10 bg-white/80 hover:bg-white text-gray-800 rounded-full flex items-center justify-center shadow-md md:hidden"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+              </div>
+              
+              {/* Content Section */}
+              <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col relative">
+                <button 
+                  onClick={() => setSelectedProduct(null)}
+                  className="absolute top-6 right-6 text-gray-400 hover:text-gray-800 transition-colors hidden md:block"
+                >
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                
+                <span className="inline-block px-4 py-1 bg-[#e8f3ee] text-[#043b22] font-bold rounded-md text-sm mb-4 w-fit">
+                  {selectedProduct.category}
+                </span>
+                
+                <h2 className="text-4xl font-extrabold text-[#043b22] mb-2">{selectedProduct.product.name}</h2>
+                <h4 className="text-lg font-medium text-gray-500 mb-8">{selectedProduct.product.sub}</h4>
+                
+                <div className="prose prose-lg text-gray-700 mb-10 flex-grow">
+                  <p className="leading-relaxed">{selectedProduct.product.desc}</p>
+                </div>
+                
+                <div className="mt-auto">
+                  <Link 
+                    href={`/contact?subject=Inquiry about ${encodeURIComponent(selectedProduct.product.name)}`}
+                    className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-[#df6c1f] text-white font-bold rounded-lg hover:bg-[#c25a17] transition-all group"
+                  >
+                    Enquire Now 
+                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Click outside to close (background overlay) */}
+          <div className="absolute inset-0 z-[-1]" onClick={() => setSelectedProduct(null)}></div>
+        </div>
+      )}
+
+    </main>
+  );
+}

@@ -12,7 +12,15 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Products & Services", href: "/products" },
+    { 
+      name: "Products & Services", 
+      href: "/products",
+      dropdown: [
+        { name: "FVF Supply", href: "/products/fvf-supply" },
+        { name: "Agri-MPD", href: "/products/agri-mpd" },
+        { name: "Farm Consulting", href: "/products/farm-consulting" }
+      ]
+    },
     { name: "Farmers Welfare Program", href: "/farmers-welfare-program" },
     { name: "Blog", href: "/blog" },
     { name: "Career", href: "/career" },
@@ -28,7 +36,7 @@ export default function Navbar() {
             <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
             </svg>
-            <span>+91 7020692535</span>
+            <span>+91 7123100024</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -61,9 +69,35 @@ export default function Navbar() {
           <div className="w-28 sm:w-40 hidden lg:block"></div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-8 text-[15px] font-medium">
+          <div className="hidden lg:flex items-center space-x-8 text-[15px] font-medium h-full">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+              
+              if (link.dropdown) {
+                return (
+                  <div key={link.name} className="relative group h-full flex items-center">
+                    <Link 
+                      href={link.href} 
+                      className={`transition-colors hover:text-[#df6c1f] flex items-center gap-1 py-4 ${isActive ? "text-[#df6c1f]" : "text-[#333333]"}`}
+                    >
+                      {link.name}
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </Link>
+                    <div className="absolute top-full left-0 -mt-2 w-56 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 z-50 flex flex-col overflow-hidden">
+                      {link.dropdown.map((dropItem) => (
+                        <Link 
+                          key={dropItem.name} 
+                          href={dropItem.href}
+                          className="px-5 py-3 hover:bg-[#f7f9f4] hover:text-[#df6c1f] text-[#333333] transition-colors border-b border-gray-50 last:border-0"
+                        >
+                          {dropItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link 
                   key={link.name} 
@@ -99,13 +133,42 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 flex flex-col z-40 max-h-[calc(100vh-100px)] overflow-y-auto">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            
+            if (link.dropdown) {
+              return (
+                <div key={link.name} className="flex flex-col border-b border-gray-50">
+                  <div className="px-6 py-4 flex items-center justify-between">
+                    <Link 
+                      href={link.href} 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`transition-colors ${isActive ? "text-[#df6c1f] font-bold" : "text-[#333333] font-medium"}`}
+                    >
+                      {link.name}
+                    </Link>
+                  </div>
+                  <div className="flex flex-col bg-gray-50/50 pl-10 pr-6 py-2">
+                    {link.dropdown.map((dropItem) => (
+                      <Link 
+                        key={dropItem.name} 
+                        href={dropItem.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`py-3 transition-colors ${pathname === dropItem.href ? "text-[#df6c1f] font-bold" : "text-[#555] font-medium hover:text-[#df6c1f]"}`}
+                      >
+                        {dropItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
             return (
               <Link 
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-6 py-4 border-b border-gray-50 transition-colors ${isActive ? "bg-[#f7f9f4] text-[#df6c1f] font-bold" : "text-[#333333] font-medium"}`}
+                className={`px-6 py-4 border-b border-gray-50 transition-colors ${pathname === link.href ? "bg-[#f7f9f4] text-[#df6c1f] font-bold" : "text-[#333333] font-medium"}`}
               >
                 {link.name}
               </Link>
