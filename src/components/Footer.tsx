@@ -74,7 +74,7 @@ export default function Footer() {
             <svg className="w-[18px] h-[18px] mt-0.5 text-[#333333] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
             <div>
               <p className="text-[#333333] mb-1">Mobile:</p>
-              <p className="text-[#444444]">+91 7123100024</p>
+              <p className="text-[#444444]">+91 7219221539 / +91 7123100024</p>
             </div>
           </div>
 

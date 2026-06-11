@@ -35,11 +35,11 @@ export default function ContactPage() {
           {/* Left Column: Contact Info */}
           <div className="flex flex-col gap-10">
             <div>
-              <h3 className="text-2xl font-bold text-[#043b22] mb-8">Our Contact Information</h3>
+              <h3 className="text-2xl font-bold text-[#043b22] mb-8 text-center md:text-left">Our Contact Information</h3>
               
               <div className="flex flex-col gap-8">
                 {/* Location */}
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
                   <div className="p-4 bg-white text-[#df6c1f] rounded-full shadow-sm mt-1">
                     <FaMapMarkerAlt className="text-xl" />
                   </div>
@@ -52,20 +52,20 @@ export default function ContactPage() {
                 </div>
 
                 {/* Contact */}
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
                   <div className="p-4 bg-white text-[#df6c1f] rounded-full shadow-sm mt-1">
                     <FaPhoneAlt className="text-xl" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">Contact</h4>
                     <p className="text-gray-600">
-                      <a href="tel:+917123100024" className="hover:text-[#df6c1f] transition-colors">+91 7123100024</a>
+                      <a href="tel:+917123100024" className="hover:text-[#df6c1f] transition-colors">+91 7219221539 / +91 7123100024</a>
                     </p>
                   </div>
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
                   <div className="p-4 bg-white text-[#df6c1f] rounded-full shadow-sm mt-1">
                     <FaEnvelope className="text-xl" />
                   </div>
@@ -80,9 +80,9 @@ export default function ContactPage() {
             </div>
 
             {/* Social Media */}
-            <div className="mt-4 pt-8 border-t border-gray-200">
+            <div className="mt-4 pt-8 border-t border-gray-200 text-center md:text-left">
               <p className="font-bold text-gray-900 mb-6">Connect us with social media</p>
-              <div className="flex gap-4">
+              <div className="flex justify-center md:justify-start gap-4">
                 <a href="https://www.facebook.com/profile.php?id=61553188672484&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-gray-600 hover:text-[#df6c1f] rounded-full shadow-sm transition-colors">
                   <FaFacebook className="text-xl" />
                 </a>
