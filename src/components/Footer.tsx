@@ -89,6 +89,10 @@ export default function Footer() {
         </div>
 
       </div>
+
+      <div className="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-600">
+        &copy; {new Date().getFullYear()} Shetahit Farm Solutions Pvt. Ltd. All Rights Reserved.
+      </div>
     </footer>
   );
 }
